@@ -1,1 +1,5 @@
-[]
+- "!include public_article.yaml"
+- "!include public_author.yaml"
+- "!include public_user.yaml"
+- "!include public_user_article_access.yaml"
+- "!include public_user_author_access.yaml"

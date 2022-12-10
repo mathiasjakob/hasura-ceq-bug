@@ -1,0 +1,30 @@
+table:
+  name: author
+  schema: public
+array_relationships:
+  - name: articles
+    using:
+      foreign_key_constraint_on:
+        column: author_id
+        table:
+          name: article
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - name
+        - id
+      filter:
+        _exists:
+          _table:
+            name: user_author_access
+            schema: public
+          _where:
+            _and:
+              - user_id:
+                  _eq: X-Hasura-User-Id
+              - author_id:
+                  _ceq:
+                    - $
+                    - id
