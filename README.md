@@ -1,5 +1,6 @@
 # hasura-ceq-bug
 This repo demonstrates a potential column reference bug in Hasura 2.16.0.
+Issue Link: https://github.com/hasura/graphql-engine/issues/9283
 
 ## Steps to reproduce
 1. run `docker-compose up`
